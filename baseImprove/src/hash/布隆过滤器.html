@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>布隆过滤器</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<h1 align="center">布隆过滤器</h1>
+<h3>模型：</h3>
+<p>对于一个存储大量数据的集合只有insert和query操作，没有删除</p>
+<h3>大致内容:</h3>
+<p>比如说一个做浏览器的的公司，它有一个集合(黑名单)里面存有一些url是用户不能访问的.如果存硬盘的话速度很慢，<br>但由于
+数据量很大，直接存在一个HashSet里太占内存,搞一个 m个bit的的bit数组(位图),把每一个黑名单里的url用k个hash函数计算出k个hash值，
+    再用k个hash值去%m，<br>再把bit数组里这些个位置设置成1，对于一个待测的urlx,计算出它的k个hash值再%m，去bit数组里看这些个位置
+    是否全是1，如果有任何一个位置不是1则说明urlx不在黑名单里。
+</p>
+<h3>注：</h3>
+&emsp;&emsp;误判只可能：白 --> 黑
+<br>
+&emsp;&emsp;不可能： 黑 --> 白&emsp;因为：如果是黑的计算出的位置上一定都是1
+<img src="布隆过滤器公式.png" alt="加载失败">
+</body>
+</html>

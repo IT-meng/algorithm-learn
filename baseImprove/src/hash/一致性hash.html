@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一致性哈希</title>
+    <h1>一致性哈希</h1>
+    <img src="一致性hash01.png" alt="无法加载">
+    <p>选择种类多的作为key来划分数据，如：姓名，身份证号等，而不是：国家，性别等会导致负载不均衡的作为key</p>
+    <img src="一致性hash02.png" alt="无法加载">
+    <img src="一致性hash03.png" alt="无法加载">
+    <img src="一致性hash04.png" alt="无法加载">
+    <img src="一致性hash05.png" alt="无法加载">
+    <p>每台逻辑端的服务器存着分布式数据库每台机器的hash值组成的有序表</p>
+    <p>对于&emsp;”左“，33&emsp;记录用md5计算出其hash值，在有序表中二分查找第一个>=”左“，33的hash值的机器
+    如果没有则就是第一台机器
+    </p>
+    <img src="一致性hash06.png" alt="无法加载">
+    <h3>虚拟节点</h3>
+    <img src="一致性哈希07.png" alt="无法加载">
+
+</head>
+<body>
+
+</body>
+</html>
